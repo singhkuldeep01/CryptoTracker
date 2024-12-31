@@ -1,16 +1,13 @@
-import { useEffect } from 'react'
 import Banner from './Components/Banner/Banner'
 import Navbar from './Components/Navbar/Navbar'
-import FetchCoinData from './Services/FetchCoinData';
+import CryptoCoinTable from './Components/CryptoCoinTable/CryptoCoinTable';
 
 function App() {
-  useEffect(()=>{
-    FetchCoinData();
-  },[]);
   return (
     <>
-      <Navbar></Navbar>
-      <Banner></Banner>
+      <Navbar/>
+      <Banner/>
+      <CryptoCoinTable/>
     </>
   )
 }
