@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Navbar() {
+  const [search, setSearch] = useState("");
+  const [show, setShow] = useState(false);
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown text-yellow-400">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,7 @@ function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-yellow-400"
           >
             <li>
               <a>Homepage</a>
@@ -38,16 +40,37 @@ function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">Crypto Tracker</a>
+        {show ? (
+          <div className="flex items-center justify-center">
+            <div className="flex items-center w-full max-w-2xl border border-yellow-400 rounded-full overflow-hidden shadow-sm">
+              <input
+                type="text"
+                placeholder="Type here"
+                className="flex-grow px-4 py-2 text-yellow-400 placeholder-yellow-400 bg-transparent text-sm focus:outline-none"
+              />
+              <button className="px-5 py-2 text-sm font-medium text-black bg-yellow-400 rounded-full transition hover:bg-yellow-500">
+                Search
+              </button>
+            </div>
+          </div>
+        ) : (
+          <a className="btn btn-ghost text-xl tracking-wider text-yellow-400 font-bold uppercase">
+            Crypto Tracker
+          </a>
+        )}
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end text-yellow-400">
         <button className="btn btn-ghost btn-circle">
+
+        {
+          !show ? 
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            onClick={() => setShow(!show)}
           >
             <path
               strokeLinecap="round"
@@ -56,6 +79,24 @@ function Navbar() {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
+          :
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="h-5 w-5"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  onClick={() => setShow(!show)}
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    d="M6 18L18 6M6 6l12 12"
+  />
+</svg>
+
+        }
         </button>
         <button className="btn btn-ghost btn-circle">
           <div className="indicator">

@@ -9,7 +9,7 @@ function Banner() {
         className='w-full h-full object-cover object-top'
       />
       <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col gap-4'> 
-        <h1 className='text-4xl text-white font-bold tracking-wide backdrop-blur-md p-2'>
+        <h1 className='text-4xl text-yellow-400 font-bold tracking-wide backdrop-blur-md p-2'>
           Crypto Tracker
         </h1>
         <p className='text-white text-xl backdrop-blur-md p-2'>
