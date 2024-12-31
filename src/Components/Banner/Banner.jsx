@@ -12,7 +12,6 @@ function Banner() {
                 <h1 className='text-4xl text-white font-bold tracking-wide'>Crypto Tracker</h1>
                 <p className='text-white text-xl'>Track your favorite cryptocurrencies</p>
             </div>
-
         </div>
     </>
   ) 
