@@ -41,11 +41,11 @@ function Navbar() {
       </div>
       <div className="navbar-center">
         {show ? (
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center w-full max-w-2xl">
             <div className="flex items-center w-full max-w-2xl border border-yellow-400 rounded-full overflow-hidden shadow-sm">
               <input
                 type="text"
-                placeholder="Type here"
+                placeholder="Search Currency"
                 className="flex-grow px-4 py-2 text-yellow-400 placeholder-yellow-400 bg-transparent text-sm focus:outline-none"
               />
               <button className="px-5 py-2 text-sm font-medium text-black bg-yellow-400 rounded-full transition hover:bg-yellow-500">
@@ -61,42 +61,39 @@ function Navbar() {
       </div>
       <div className="navbar-end text-yellow-400">
         <button className="btn btn-ghost btn-circle">
-
-        {
-          !show ? 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            onClick={() => setShow(!show)}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-          :
-          <svg
-  xmlns="http://www.w3.org/2000/svg"
-  className="h-5 w-5"
-  fill="none"
-  viewBox="0 0 24 24"
-  stroke="currentColor"
-  onClick={() => setShow(!show)}
->
-  <path
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth={2}
-    d="M6 18L18 6M6 6l12 12"
-  />
-</svg>
-
-        }
+          {!show ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              onClick={() => setShow(!show)}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              onClick={() => setShow(!show)}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          )}
         </button>
         <button className="btn btn-ghost btn-circle">
           <div className="indicator">
