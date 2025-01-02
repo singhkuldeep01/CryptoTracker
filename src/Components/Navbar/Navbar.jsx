@@ -32,10 +32,10 @@ function Navbar() {
               <a onClick={()=>{navigate('/')}}>Homepage</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a onClick={()=>{navigate('/about')}}>About</a>
             </li>
             <li>
-              <a>About</a>
+              <a onClick={()=>{navigate('/easteregg')}}>EasterEgg</a>
             </li>
           </ul>
         </div>
