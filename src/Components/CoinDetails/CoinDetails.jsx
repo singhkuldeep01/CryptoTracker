@@ -29,7 +29,7 @@ function CoinDetails() {
 
   return (
     <div className=" text-yellow-500 p-6 broder border-yellow-400">
-      <div className="max-w-4xl mx-auto bg-[#282056] rounded-lg shadow-lg p-8 border border-[#FFD700] min-h-4xl">
+      <div className="max-w-4xl mx-auto bg-[#282056] rounded-lg shadow-lg p-8 border border-[#FFD700] min-h-4xl mt-16">
         {isLoading ? (
           <div className="flex w-full justify-center text-yellow-400">
           <span className="loading loading-ring loading-lg"></span>

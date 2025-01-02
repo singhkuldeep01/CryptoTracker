@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [search, setSearch] = useState("");
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 fixed w-full z-[1] shadow-md h-16">
       <div className="navbar-start">
         <div className="dropdown text-yellow-400">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -28,7 +29,7 @@ function Navbar() {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-yellow-400"
           >
             <li>
-              <a>Homepage</a>
+              <a onClick={()=>{navigate('/')}}>Homepage</a>
             </li>
             <li>
               <a>Portfolio</a>
@@ -54,7 +55,7 @@ function Navbar() {
             </div>
           </div>
         ) : (
-          <a className="btn btn-ghost text-xl tracking-wider text-yellow-400 font-bold uppercase">
+          <a className="btn btn-ghost text-xl tracking-wider text-yellow-400 font-bold uppercase" onClick={()=>{navigate('/')}}>
             Crypto Tracker
           </a>
         )}

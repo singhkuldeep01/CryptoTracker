@@ -5,7 +5,6 @@ import CryptoCoinTable from '../Components/CryptoCoinTable/CryptoCoinTable'
 function Home() {
   return (
     <>
-        <Navbar/>
         <Banner/>
         <CryptoCoinTable/>
     </>
